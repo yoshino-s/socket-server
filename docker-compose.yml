@@ -1,0 +1,8 @@
+version: "3"
+services:
+  socket:
+    build: .
+    restart: always
+    ports:
+      - 30000:3000
+      - 30001:3001
