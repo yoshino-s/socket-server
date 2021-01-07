@@ -42,7 +42,7 @@ export class AppController {
   async sendFile(@Param("id") id: string, @UploadedFile() file) {
     const res = this.socketService.connections.get(id);
     if (res && !res.connectionInfo.close) {
-      await res.sendFile(file.path, file.fileName);
+      await res.sendFile(file.path, file.originalname);
       return res.connectionInfo;
     }
     else {
